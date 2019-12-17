@@ -1,0 +1,20 @@
+{
+    "server": {
+        "enabled": true,
+        "bootstrap_expect": 1
+    },
+    "datacenter": "dc1",
+    "region": "global",
+    "data_dir": "/nomad/data/",
+    "bind_addr": "0.0.0.0",
+    "ports": {
+        "http": "4646",
+        "rpc": "4647",
+        "serf": "4648"
+    },
+    "enable_debug": true,
+    "disable_update_check": true,
+    "consul": {
+        "address": "consul-server-bootstrap:8500"
+    }
+}
