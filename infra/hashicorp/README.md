@@ -22,4 +22,4 @@ in docker-compose, see `nomad` and `nomad-client`
 
 ### Vector Logging
 
-Setup the socket audit 
+Setup the socket audit with `./tools/setup_vault_audit.sh $MY_VAULT_TOKEN` once vault is available and leased.
