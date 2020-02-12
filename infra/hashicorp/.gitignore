@@ -3,3 +3,6 @@ vault/data/core
 vault/data/logical
 vault/data/sys
 vector/data/*
+nomad_client/data/
+nomad_server/data/
+consul_leader/data/

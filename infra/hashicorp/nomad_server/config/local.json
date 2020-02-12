@@ -6,11 +6,10 @@
     "datacenter": "dc1",
     "region": "global",
     "data_dir": "/nomad/data/",
-    "bind_addr": "0.0.0.0",
-    "ports": {
-        "http": "4646",
-        "rpc": "4647",
-        "serf": "4648"
+    "advertise": {
+        "http": "172.20.0.6:4646",
+        "rpc": "172.20.0.6:4647",
+        "serf": "172.20.0.6:4648"
     },
     "enable_debug": true,
     "disable_update_check": true,

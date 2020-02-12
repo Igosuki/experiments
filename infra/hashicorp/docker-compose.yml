@@ -5,6 +5,7 @@ services:
     volumes:
       - ./nomad_server/config:/etc/nomad
       - ./tmp:/tmp
+      - ./nomad_server/data:/nomad/data
     command: agent
     ports: 
       - 4646:4646
@@ -19,6 +20,7 @@ services:
     command: agent
     volumes:
       - ./nomad_client/config:/etc/nomad
+      - ./nomad_client/data:/nomad/data
       - ./tmp:/tmp
     depends_on:
       - nomad

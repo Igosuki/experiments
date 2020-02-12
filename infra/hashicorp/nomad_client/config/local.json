@@ -1,15 +1,17 @@
 {
     "client": {
-        "enabled": true
+        "enabled": true,
+        "options": {
+            "docker.privileged.enabled": "true"
+        }
     },
     "datacenter": "dc1",
     "region": "global",
     "data_dir": "/nomad/data/",
-    "bind_addr": "0.0.0.0",
-    "ports": {
-        "http": "5646",
-        "rpc": "5647",
-        "serf": "5648"
+    "advertise": {
+        "http": "172.20.0.6:4646",
+        "rpc": "172.20.0.6:4647",
+        "serf": "172.20.0.6:4648"
     },
     "enable_debug": true,
     "disable_update_check": true,
