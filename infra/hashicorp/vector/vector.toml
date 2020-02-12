@@ -1,0 +1,25 @@
+# Set global options
+data_dir = "/var/lib/vector"
+[sources.vault]
+  # REQUIRED - General
+  type = "socket" # must be: "socket"
+  address = "0.0.0.0:9000" # example, relevant when mode = "tcp" or mode = "udp"
+  mode = "tcp" # example, enum
+  # OPTIONAL - General
+  shutdown_timeout_secs = 30 # default, seconds, relevant when mode = "tcp"
+  # OPTIONAL - Context
+  host_key = "host" # default
+[sinks.stdoutfile]
+  # REQUIRED - General
+  type = "file" # must be: "file"
+  inputs = ["vault"] # example
+  path = "/var/lib/vector/vault.log" # example
+  # REQUIRED - requests
+  encoding = "ndjson" # example, enum
+  # OPTIONAL - General
+  healthcheck = true # default
+
+[sinks.console]
+  inputs = ["vault"] # <--- connect the sink to our transform
+  type   = "console"
+  encoding = "json" # example, enum

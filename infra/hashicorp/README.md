@@ -19,3 +19,7 @@ in docker-compose, see `consul-server` and `consul-agent`
 Container orchestrator
 
 in docker-compose, see `nomad` and `nomad-client`
+
+### Vector Logging
+
+Setup the socket audit 

@@ -1,7 +1,9 @@
 {
     "backend": {
-        "file": {
-            "path": "/vault/file"
+        "consul": {
+            "address": "consul-server-bootstrap:8500",
+            "path": "vault",
+            "scheme": "http"
         }
     },
     "listener": {
