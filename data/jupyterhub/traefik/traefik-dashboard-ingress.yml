@@ -1,0 +1,20 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: loadbalancer
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`traefik.test`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+    - match: Host(`traefik-eu-west-1.adikteev.io`) && PathPrefix(`/ping`)
+      kind: Rule
+      services:
+        - name: ping@internal
+          kind: TraefikService

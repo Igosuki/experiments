@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jupyterhub
+    chart: jupyterhub-0.8.2
+    component: proxy-public
+    heritage: Tiller
+    release: jhub
+  name: proxy-public
+  namespace: jhub
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    component: proxy
+    release: jhub
+  type: ClusterIP

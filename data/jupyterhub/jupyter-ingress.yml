@@ -1,0 +1,16 @@
+---
+    apiVersion: traefik.containo.us/v1alpha1
+    kind: IngressRoute
+    metadata:
+      name: jupyter-dashboard
+      namespace: loadbalancer
+    spec:
+      entryPoints:
+        - web
+      routes:
+        - match: Host(`jupyter.test`)
+          kind: Rule
+          services:
+            - name: proxy-public
+              port: 80
+              namespace: jhub
